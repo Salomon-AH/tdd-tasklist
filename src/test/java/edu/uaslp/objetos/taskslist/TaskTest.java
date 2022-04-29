@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.time.LocalDateTime;
 import java.time.Month;
+import edu.uaslp.objetos.taskslist.exceptions.TaskListException;
 
 import org.junit.jupiter.api.Test;
 
@@ -86,6 +87,5 @@ public class TaskTest {
                 .hasMessage("Due date is set in the past")
                 .isInstanceOf(TaskListException.class)
                 .isInstanceOf(RuntimeException.class);
-
     }
 }

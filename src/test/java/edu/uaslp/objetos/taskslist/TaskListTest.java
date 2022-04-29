@@ -1,15 +1,15 @@
 package edu.uaslp.objetos.taskslist;
 
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import edu.uaslp.objetos.taskslist.exceptions.TaskNotFoundException;
 
 import org.junit.jupiter.api.Test;
 
-public class TaksListTest {
+public class TaskListTest {
 
     @Test
     public void givenANewTasksList_whenCreated_thenListIsEmpty() {
@@ -60,7 +60,7 @@ public class TaksListTest {
     }
 
     @Test
-    public void findTaskTest() {
+    public void findTaskTest() throws TaskNotFoundException{
         // Given: (Inicialización)
         TaskList taskList = new TaskList();
 
@@ -109,7 +109,7 @@ public class TaksListTest {
     }
 
     @Test
-    public void markTaskAsDone() {
+    public void markTaskAsDone() throws TaskNotFoundException{
         // Given: (Inicialización)
         TaskList taskList = new TaskList();
 
@@ -131,7 +131,7 @@ public class TaksListTest {
     }
 
     @Test
-    public void markTaskAsUndone() {
+    public void markTaskAsUndone() throws TaskNotFoundException{
         // Given: (Inicialización)
         TaskList taskList = new TaskList();
 
@@ -177,7 +177,7 @@ public class TaksListTest {
     }
 
     @Test
-    public void testGetListOfUndoneTasks() {
+    public void testGetListOfUndoneTasks() throws TaskNotFoundException{
         // Given: (Inicialización)
         TaskList taskList = new TaskList();
 
